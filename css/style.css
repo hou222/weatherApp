@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+
+.left {
+    width: 60%;
+    height: 100vh;
+    /* background-image: url(/img/snow.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: rgba(0, 0, 0, 0.463);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 30px;   
+    position: relative; 
+    color: #FFF;
+}
+
+.left-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    z-index: -1;
+}
+
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+}
+
+
