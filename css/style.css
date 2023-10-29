@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +8,7 @@
 body {
     overflow: hidden;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
 }
 
 .container {
@@ -22,10 +23,10 @@ body {
     /* background-image: url(/img/snow.jpg);
     background-repeat: no-repeat;
     background-size: cover; */
-    background-color: rgba(0, 0, 0, 0.463);
+    background-color: rgba(0, 0, 0, 0.466);
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-    padding: 30px;   
+    padding: 30px 50px;   
     position: relative; 
     color: #FFF;
 }
@@ -48,16 +49,100 @@ body {
     align-items: center;
 }
 
+.logo {
+    font-weight: 300;
+    font-size: 30px;
+}
+
+
 .main {
     height: 100%;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
     align-items: center;
+    gap: 30px;
+    padding-top: 200px;
 }
 
-.logo {
-    font-size: 25px;
+
+.current-location {
+    padding:10px 20px;
+    background-color: rgba(0, 0, 0, 0.252);
+    border-radius: 15px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
 }
+
+.location-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.current-location-text {
+    font-size: 12px;
+}
+
+.display-location-name {
+    padding-top: 5px;
+    font-family: 'Montserrat', sans-serif;;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.main p {
+    font-size: 30px;
+    
+}
+
+.separator-line {
+    width: 150px;
+    height: 6px;
+    background-color: #FFF;
+    border-radius: 15px;
+}
+
+.search-bar {
+    width: 400px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #ffffff42;
+    color: #FFF;
+    padding: 10px 20px;
+    border: none;
+    font-size: 15px;
+    outline: none;
+    background-image: url(/img/search.png);
+    background-repeat: no-repeat;
+    background-position: 370px center;
+    background-size: 20px;
+    
+}
+.search-bar::placeholder {
+    color: #ffffffb7;
+}
+
+
+/* .search-btn {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    right: 0;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
