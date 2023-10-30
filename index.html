@@ -9,14 +9,14 @@
 <body>
     <div class="container">
         <div class="left">
-            <img class="left-image" src="/img/nature.jpg" alt="">
+            <img class="left-image" src="/img/nature.jpg" alt="nature backround image">
             <header class="header">
                 <p class="logo">weather</p>
                 <div class="current-location">
                     <img class="location-icon" src="img/location.png" alt="">
                     <div class="location-name">
-                        <p class="js-current-location-text current-location-text">Current Location</p>
-                        <p class="js-display-location-name display-location-name">Biskra, Algeria</p>
+                        <p class="js-current-location-text current-location-text">Location</p>
+                        <p class="js-display-location-name display-location-name"></p>
                     </div>
                 </div>
             </header>
@@ -25,7 +25,7 @@
                 <div class="separator-line">
 
                 </div>
-                <input class="js-search-bar search-bar" type="search" name="location" placeholder="Enter location">
+                <input class="js-search-bar search-bar" type="search" name="location" placeholder="Enter city name">
                 <button class="js-search-btn" type="submit">Click</button>
                 <!-- <input type="submit" name="city-name"> -->
                 
@@ -41,6 +41,35 @@
                 <img class="weather-condition" src="" alt="">
                 <p class="js-date date">Monday 24, July '20</p>
             </div>
+            <p class="daily">Daily</p>
+            <div class="slide-container">
+                <div class="daily-weather-info">
+                    <p class="js-slide-container-degree slide-container-degree">12°</p>
+                    <div class="weather-description">
+                        <p class="js-slide-container-weather slide-container-weather">Cloudy</p>
+                        <img src="/img/weather-icon/01d.png">
+                    </div>
+                    <p class="js-slide-container-date slide-container-date">Mon 24, July '20</p>
+                </div>
+                <div class="daily-weather-info">
+                    <p class="js-slide-container-degree slide-container-degree">12°</p>
+                    <div class="weather-description">
+                        <p class="js-slide-container-weather slide-container-weather">Cloudy</p>
+                        <img src="/img/weather-icon/03d.png">
+                    </div>
+                    <p class="js-slide-container-date slide-container-date">Mon 24, July '20</p>
+                </div>
+                <div class="daily-weather-info">
+                    <p class="js-slide-container-degree slide-container-degree">12°</p>
+                    <div class="weather-description">
+                        <p class="js-slide-container-weather slide-container-weather">Cloudy</p>
+                        <img src="/img/weather-icon/13d.png">
+                    </div>
+                    <p class="js-slide-container-date slide-container-date">Mon 24, July '20</p>
+                </div>
+                
+            </div>
+            
         </div>
     </div>
     <script src="scripts/script.js"></script>

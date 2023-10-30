@@ -7,6 +7,8 @@ const weatherIcon = document.querySelector('.js-weather-icon');
 const date = document.querySelector('.js-date');
 const locationTitle = document.querySelector('.js-current-location-text');
 const locationName = document.querySelector('.js-display-location-name');
+const searchBtn = document.querySelector('.js-search-btn');
+const searchBar = document.querySelector('.js-search-bar');
 
 
 function fetchWeatherData(cityName){
@@ -25,34 +27,27 @@ function fetchWeatherData(cityName){
             degree.innerHTML = `${Math.round(Data.main.temp)}°`;
             weatherIcon.src = `/img/weather-icon/${Data.weather[0].icon}.png`
             date.innerHTML = getCurrentDate();
-            locationTitle.innerHTML = 'Location';
             locationName.innerHTML = `${Data.name}, ${getCountryName(Data.sys.country)}`;
 
-            return console.log(Data);
+            //return console.log(Data);
         })
         .catch((error) => {
             console.error(error);
         });
-
-        
 }
-
-const searchBtn = document.querySelector('.js-search-btn');
-const searchBar = document.querySelector('.js-search-bar');
-
 
 
 searchBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    const cityName = searchBar.value;
-
-    fetchWeatherData(cityName);
-    
-    
-    
+    fetchWeatherData(searchBar.value);
 });
 
 
+searchBar.addEventListener('keydown', (key) => {
+    if(key.code === 'Enter'){
+        fetchWeatherData(searchBar.value);
+    }
+});
 
 
 
@@ -64,14 +59,8 @@ function getCurrentDate(){
 
 
 
-
-
 function getCountryName(countryCode) {
     const regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
 
-    console.log(regionNames.of(countryCode));
-
     return regionNames.of(countryCode);
-
-    
 }
