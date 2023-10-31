@@ -182,7 +182,7 @@ body {
     font-weight: bold;
 }
 
-.slide-container {
+.slides {
     width: 100%;
     padding: 0 0 0 50px;
     display: flex;
@@ -203,14 +203,14 @@ body {
     
 }
 
-.slide-container-degree {
+.slides-degree {
     padding-top: 20px;
     padding-bottom: 30px;
     font-size: 28px;
     font-weight: bold;
 }
 
-.slide-container-weather {
+.slides-weather {
     
     font-weight: 600;
     font-size: 20px;
@@ -229,11 +229,45 @@ body {
     height: 25px;
 }
 
-.slide-container-date {
+.slides-date {
     padding-top: 10px;
     font-size: 14px;
     
 }
+
+
+.slider {
+    width: 100%;
+    position: relative;
+    
+}
+
+.left-arrow,
+.right-arrow {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: #FFF;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    box-shadow: 0.5px 0.5px 5px rgba(0, 0, 0, 0.337);
+    cursor: pointer;
+}
+
+.left-arrow {
+    left: 32.5px;
+    color: rgb(155, 155, 155);
+}
+
+.right-arrow {
+    right: 100px;
+}
+
+
 
 
 
