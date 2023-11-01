@@ -29,6 +29,7 @@ body {
     padding: 30px 50px;   
     position: relative; 
     color: #FFF;
+    
 }
 
 .left-image {
@@ -66,6 +67,7 @@ body {
 
 
 .current-location {
+    height: 60px;
     padding:10px 20px;
     background-color: rgba(0, 0, 0, 0.252);
     border-radius: 15px;
@@ -190,6 +192,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     gap: 15px; 
+    transition: ease-out 0.8s;
 }
 
 
@@ -237,8 +240,10 @@ body {
 
 
 .slider {
+    padding: 10px 0;
     width: 100%;
     position: relative;
+    overflow: hidden;
     
 }
 
@@ -255,16 +260,18 @@ body {
     font-size: 15px;
     border: none;
     box-shadow: 0.5px 0.5px 5px rgba(0, 0, 0, 0.337);
-    cursor: pointer;
+    z-index: 1;
 }
 
 .left-arrow {
     left: 32.5px;
     color: rgb(155, 155, 155);
+    
 }
 
 .right-arrow {
     right: 100px;
+    cursor: pointer;
 }
 
 

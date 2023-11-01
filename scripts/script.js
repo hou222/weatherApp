@@ -9,6 +9,11 @@ const locationTitle = document.querySelector('.js-current-location-text');
 const locationName = document.querySelector('.js-display-location-name');
 const searchBtn = document.querySelector('.js-search-btn');
 const searchBar = document.querySelector('.js-search-bar');
+const slide = document.querySelector('.slides');
+const leftArrow = document.querySelector('.js-left-arrow');
+const rightArrow = document.querySelector('.js-right-arrow');
+const displaySmallInfo = document.querySelector('.weatehr-descrition');
+let indexSlide = 0;
 
 
 function fetchWeatherData(cityName){
@@ -63,4 +68,34 @@ function getCountryName(countryCode) {
     const regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
 
     return regionNames.of(countryCode);
+}
+
+
+
+
+rightArrow.addEventListener('click', () => {
+
+    indexSlide--;
+    show();
+
+    if(indexSlide < 0) {
+        leftArrow.style.color = '#000';
+        leftArrow.style.cursor = 'pointer'       
+       }
+});
+
+leftArrow.addEventListener('click', () => {
+    
+    if (indexSlide < 0) {
+        indexSlide++;
+        show();
+        if(indexSlide === 0) {
+            leftArrow.style.color = 'rgb(155, 155, 155)';
+            leftArrow.style.cursor = 'auto';     
+        }
+    }
+});
+
+function show(){
+       slide.style.transform = `translateX(${indexSlide * (slide.children[0].offsetWidth + 15)}px)`;
 }
