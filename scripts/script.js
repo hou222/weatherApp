@@ -1,4 +1,4 @@
-const apiKEY = '19195f675238682b98a2e612b103d1f1';
+import { apiKEY } from "./config.js";
 const apiURL = 'https://api.openweathermap.org/data/2.5/weather';
 
 const weatherCondion = document.querySelector('.js-display-weather-condition');
