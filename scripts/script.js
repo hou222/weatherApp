@@ -4,11 +4,8 @@ const dailyApiURL = 'https://api.openweathermap.org/data/2.5/forecast';
 
 
 const weatherCondion = document.querySelector('.js-display-weather-condition');
-//const dailyWeatherCondition = document.querySelector('.js-slides-weather');
 const degree = document.querySelector('.js-degree');
-//const dailyDegree = document.querySelector('.js-slides-degree');
 const weatherIcon = document.querySelector('.js-weather-icon');
-//const dailyWeatherIcon = document.querySelector('.js-daily-weather-icon');
 const date = document.querySelector('.js-date');
 const locationTitle = document.querySelector('.js-current-location-text');
 const locationName = document.querySelector('.js-display-location-name');
@@ -21,6 +18,7 @@ const displaySmallInfo = document.querySelector('.weatehr-descrition');
 const leftContainer = document.querySelector('.left');
 const rightContainer = document.querySelector('.right');
 const backgroundImage = document.querySelector('.left-image');
+const errorTxt = document.querySelector('.error-display');
 let indexSlide = 0;
 
 
@@ -42,19 +40,24 @@ function fetchWeatherData(cityName){
             weatherIcon.src = `/img/weather-icon/${Data.weather[0].icon}.png`;
             timestamp = Data.dt;
             date.innerHTML = getDate(timestamp);
-
             locationName.innerHTML = `${Data.name}, ${getCountryName(Data.sys.country)}`;
 
-            //return console.log(Data);
+            leftContainer.style.width = '60%';
+            rightContainer.style.width = '40%';
+
+            leftContainer.style.borderTopRightRadius = '30px';
+            leftContainer.style.borderBottomRightRadius = '30px';
+            backgroundImage.style.borderTopRightRadius = '30px';
+            backgroundImage.style.borderBottomRightRadius = '30px';
         })
         .catch((error) => {
             console.error(error);
+            errorTxt.style.visibility = 'visible'; 
         });
 }
 
 function fetchDailyWeatherData (cityName) {
     const url = `${dailyApiURL}?q=${cityName}&appid=${apiKEY}&units=metric`;
-    
     
 
     fetch(url)
@@ -69,8 +72,6 @@ function fetchDailyWeatherData (cityName) {
                 const timestamp = data.list[i].dt;
                 const weatherTime = data.list[i].dt_txt.split(' ')[1];
                 
-                
-                //console.log(date.innerHTML);
 
                 if((getDate(timestamp) !== previousDate) && (time === weatherTime)){
                 const dailyWeatherCondition = document.querySelector(`.js-daily-weather-info${c} .js-slides-weather`);
@@ -78,49 +79,40 @@ function fetchDailyWeatherData (cityName) {
                 const dailyWeatherIcon = document.querySelector(`.js-daily-weather-info${c} .js-daily-weather-icon`);
                 const dailyDate = document.querySelector(`.js-daily-weather-info${c} .js-slides-date`);
                 
-
-                
                 dailyDegree.innerHTML = `${Math.round(data.list[i].main.temp)}°`;
                 dailyWeatherCondition.innerHTML = `${data.list[i].weather[0].main}`;
                 dailyWeatherIcon.src = `/img/weather-icon/${data.list[i].weather[0].icon}.png`;
                 dailyDate.innerHTML = getDate(timestamp);
                 previousDate = getDate(timestamp);
-                //console.log(weatherTime);
-                //console.log(c); 
                 c++;
             }
             }
-
-            console.log(data);
         })
         .catch((error) => {
-
          console.error(error);
         });
 }
 
 
 searchBtn.addEventListener('click', (event) => {
+    if(searchBar.value !== ''){
     event.preventDefault();
+    errorTxt.style.visibility = 'hidden';
     fetchWeatherData(searchBar.value);
     dailyContainer();
     fetchDailyWeatherData(searchBar.value);
+    }
 });
 
 
 searchBar.addEventListener('keydown', (key) => {
     
-    if(key.code === 'Enter'){
+    if(key.code === 'Enter' && searchBar.value !== ''){
+        errorTxt.style.visibility = 'hidden'; 
         fetchWeatherData(searchBar.value);
         dailyContainer();
         fetchDailyWeatherData(searchBar.value);
-        leftContainer.style.width = '60%';
-        rightContainer.style.width = '40%';
-
-        leftContainer.style.borderTopRightRadius = '30px';
-        leftContainer.style.borderBottomRightRadius = '30px';
-        backgroundImage.style.borderTopRightRadius = '30px';
-        backgroundImage.style.borderBottomRightRadius = '30px';
+        
     }
 });
 
@@ -142,7 +134,7 @@ rightArrow.addEventListener('click', () => {
 
     if(clickStop > Math.abs(indexSlide)) {
         indexSlide--;
-        show();
+        slideMove();
     }
 
     
@@ -164,7 +156,7 @@ leftArrow.addEventListener('click', () => {
     
     if (indexSlide < 0) {
         indexSlide++;
-        show();
+        slideMove();
         if(indexSlide === 0) {
             leftArrow.style.color = 'rgb(155, 155, 155)';
             leftArrow.style.cursor = 'auto';     
@@ -172,7 +164,7 @@ leftArrow.addEventListener('click', () => {
     }
 });
 
-function show(){
+function slideMove(){
        slide.style.transform = `translateX(${indexSlide * (slide.children[0].offsetWidth + 25)}px)`;
 }
 
