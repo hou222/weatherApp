@@ -18,6 +18,9 @@ const slide = document.querySelector('.slides');
 const leftArrow = document.querySelector('.js-left-arrow');
 const rightArrow = document.querySelector('.js-right-arrow');
 const displaySmallInfo = document.querySelector('.weatehr-descrition');
+const leftContainer = document.querySelector('.left');
+const rightContainer = document.querySelector('.right');
+const backgroundImage = document.querySelector('.left-image');
 let indexSlide = 0;
 
 
@@ -82,8 +85,8 @@ function fetchDailyWeatherData (cityName) {
                 dailyWeatherIcon.src = `/img/weather-icon/${data.list[i].weather[0].icon}.png`;
                 dailyDate.innerHTML = getDate(timestamp);
                 previousDate = getDate(timestamp);
-                console.log(weatherTime);
-                console.log(c); 
+                //console.log(weatherTime);
+                //console.log(c); 
                 c++;
             }
             }
@@ -111,6 +114,13 @@ searchBar.addEventListener('keydown', (key) => {
         fetchWeatherData(searchBar.value);
         dailyContainer();
         fetchDailyWeatherData(searchBar.value);
+        leftContainer.style.width = '60%';
+        rightContainer.style.width = '40%';
+
+        leftContainer.style.borderTopRightRadius = '30px';
+        leftContainer.style.borderBottomRightRadius = '30px';
+        backgroundImage.style.borderTopRightRadius = '30px';
+        backgroundImage.style.borderBottomRightRadius = '30px';
     }
 });
 
@@ -126,8 +136,6 @@ function getCountryName(countryCode) {
 
     return regionNames.of(countryCode);
 }
-
-
 
 rightArrow.addEventListener('click', () => {
     const clickStop = slide.children.length - 2;

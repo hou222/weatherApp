@@ -18,14 +18,14 @@ body {
 
 
 .left {
-    width: 60%;
+    width: 100%;
     height: 100vh;
     /* background-image: url(/img/snow.jpg);
     background-repeat: no-repeat;
     background-size: cover; */
     background-color: rgba(0, 0, 0, 0.466);
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    /* border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; */
     padding: 30px 50px;   
     position: relative; 
     color: #FFF;
@@ -38,8 +38,8 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    /* border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; */
     z-index: -1;
 }
 
@@ -141,7 +141,7 @@ body {
 } */
 
 .right {
-    width: 40%;
+    width: 0%;
     position: relative;
      
 }
