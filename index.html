@@ -1,62 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="left">
-            <img class="left-image" src="/img/nature.jpg" alt="nature backround image">
-            <header class="header">
-                <p class="logo">weather</p>
-                <div class="current-location">
-                    <img class="location-icon" src="img/location.png" alt="">
-                    <div class="location-name">
-                        <p class="js-current-location-text current-location-text">Location</p>
-                        <p class="js-display-location-name display-location-name"></p>
-                    </div>
-                </div>
-            </header>
-            <main class="main">
-                <p>The Only Weather Forecast You Need</p>
-                <div class="separator-line">
-
-                </div>
-                <div class="search-conatiner">
-                    <div class="search-bar">
-                        <input class="js-search-bar search" type="search" name="location" placeholder="Enter city name">
-                        <button class="js-search-btn" type="submit"><img class="search-icon" src="/img/search.png" alt="search"></button>
-                    </div>
-                    <div class="error-display">City name is wrong</div>
-                </div>
-            </main>
-        </div>
-        <div class="right">
-            <section class="section1">
-                <p class="the-day">Today</p>
-                <div class="info-container">
-                    <img class="js-weather-icon weather-icon" src="" alt="cloudy">
-                    <p class="js-degree degree">12°</p>
-                    <p class="js-display-weather-condition display-weather-condition">Cloudy</p>
-                    <p class="js-date date">Monday 24, July '20</p>
-                </div>
-            </section>
-            <p class="daily">Daily</p>
-            <div class="slider">
-                <button class="js-left-arrow left-arrow">❮</button>
-                <button class="js-right-arrow right-arrow">❯</button>
-                 <div class="js-slides slides">
-
-                </div> 
-                <div class="fade">
-                </div>
+      <div class="js-left left">
+        <img
+          class="left-image"
+          src="/img/nature.jpg"
+          alt="nature backround image"
+        />
+        <header class="header">
+          <p class="logo">Tempo</p>
+          <div class="current-location">
+            <img
+              class="location-icon"
+              src="img/location.png"
+              alt="location icon"
+            />
+            <div class="location-name">
+              <p class="js-current-location-text current-location-text">
+                Location
+              </p>
+              <p class="js-display-location-name display-location-name"></p>
             </div>
+          </div>
+        </header>
+        <main class="main">
+          <p>The Only Weather Forecast You Need</p>
+          <div class="separator-line"></div>
+          <div class="search-container">
+            <div class="search-bar">
+              <input
+                class="js-search-bar search"
+                type="search"
+                name="location"
+                placeholder="Enter city name"
+              />
+              <button class="js-search-btn" type="submit">
+                <img class="search-icon" src="/img/search.png" alt="search" />
+              </button>
+            </div>
+            <div class="error-display">City name is wrong</div>
+          </div>
+        </main>
+      </div>
+      <div class="js-right right">
+        <section class="section1">
+          <div class="header2">
+            <p class="the-day">Today</p>
+            <!-- <div class="current-location2">
+              <img
+                class="location-icon"
+                src="img/location.png"
+                alt="location icon"
+              />
+              <div class="location-name">
+                <p class="js-current-location-text current-location-text">
+                  Location
+                </p>
+                <p class="js-display-location-name display-location-name"></p>
+              </div>
+            </div> -->
+          </div>
+          <div class="info-container">
+            <img class="js-weather-icon weather-icon" src="" alt="cloudy" />
+            <p class="js-degree degree">12°</p>
+            <p class="js-display-weather-condition display-weather-condition">
+              Cloudy
+            </p>
+            <p class="js-date date">Monday 24, July '20</p>
+          </div>
+        </section>
+        <p class="daily">Daily</p>
+        <div class="slider">
+          <button class="js-left-arrow left-arrow">❮</button>
+          <button class="js-right-arrow right-arrow">❯</button>
+          <div class="js-slides slides"></div>
+          <div class="fade"></div>
         </div>
+      </div>
     </div>
-    
+
     <script type="module" src="scripts/script.js"></script>
-</body>
+  </body>
 </html>
